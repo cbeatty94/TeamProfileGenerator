@@ -51,8 +51,32 @@ const addEmployee = () => {
         },
         {
             type: 'input',
-            
+            message: 'Employee name: ',
+            name: 'name'
+        },
+        {
+            type: 'input',
+            message: "What is the manager's employee ID?",
+            name: 'id'
+        },
+        {
+            type: 'input',
+            message: "What is the manager's email address?",
+            name: 'email'
+        },
+        {
+            type: 'input',
+            message: 'Enter their GitHub username: ',
+            name: 'githubUser',
+            when: (input) => input.role === 'Engineer'
+        },
+        {
+            type: 'input',
+            message: 'Enter Intern School: ',
+            name: 'school',
+            when: (input) => input.role === 'Intern'
         }
+    
     ])
 }
 
