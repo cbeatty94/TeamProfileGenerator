@@ -1,6 +1,8 @@
 const inquirer = require('inquirer')
-const fs = require(fs)
+const fs = require('fs')
 
+
+const employees = [];
 
 init = () => {
     console.log('Welcome to my team profile generator! Answer the following questions to begin building your team: ')
@@ -29,3 +31,19 @@ init = () => {
         }
     ])
 }
+
+employeeType = () => {
+    console.log('Choose a role for new employee!')
+    return inquirer.prompt([
+        {
+            type: 'rawlist',
+            message: 'Choose employee role: ',
+            name: 'employeeRole',
+            choices: [
+                'Engineer',
+                'Intern'
+            ],
+        }
+    ])
+}
+init();
