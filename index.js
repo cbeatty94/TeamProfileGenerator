@@ -29,8 +29,14 @@ init = () => {
            message: "What is the manager's office number?",
            name: 'officeNumber' 
         }
-    ])
-}
+    ]).then((managerResults) => {
+        managerResults.employeeRole = 'Manager';
+        const { name, id, email, officeNumber, employeeRole} = managerResults;
+        const newManager = new Manager (name, id, email, officeNumber, employeeRole);
+        employees.push(newManager);
+        employeeType();
+    })
+};
 
 employeeType = () => {
     console.log('Choose a role for new employee!')
