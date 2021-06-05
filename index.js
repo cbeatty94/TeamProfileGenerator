@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const employees = [];
 
-init = () => {
+const addManager = () => {
     console.log('Welcome to my team profile generator! Answer the following questions to begin building your team: ')
     return inquirer.prompt([
         {
@@ -30,26 +30,29 @@ init = () => {
            name: 'officeNumber' 
         }
     ]).then((managerResults) => {
-        managerResults.employeeRole = 'Manager';
-        const { name, id, email, officeNumber, employeeRole} = managerResults;
-        const newManager = new Manager (name, id, email, officeNumber, employeeRole);
+        const { name, id, email, officeNumber } = managerResults;
+        const manager = new Manager (name, id, email, officeNumber);
         employees.push(newManager);
         employeeType();
     })
 };
 
-employeeType = () => {
-    console.log('Choose a role for new employee!')
+const addEmployee = () => {
+    console.log('Add employee info!')
     return inquirer.prompt([
         {
-            type: 'rawlist',
-            message: 'Choose employee role: ',
-            name: 'employeeRole',
+            type: 'list',
+            message: 'Select employee role: ',
+            name: 'role',
             choices: [
                 'Engineer',
                 'Intern'
-            ],
+            ]
+        },
+        {
+            type: 'input',
+            
         }
     ])
 }
-init();
+
