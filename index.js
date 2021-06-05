@@ -75,6 +75,12 @@ const addEmployee = () => {
             message: 'Enter Intern School: ',
             name: 'school',
             when: (input) => input.role === 'Intern'
+        },
+        {
+            type: 'confirm',
+            message: 'Add more team members?',
+            name: 'addNewEmployee',
+            default: false
         }
     
     ])
