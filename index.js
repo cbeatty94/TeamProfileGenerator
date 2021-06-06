@@ -32,8 +32,8 @@ const addManager = () => {
     ]).then((managerResults) => {
         const { name, id, email, officeNumber } = managerResults;
         const manager = new Manager (name, id, email, officeNumber);
-        employees.push(newManager);
-        employeeType();
+        employees.push(manager);
+        console.log(manager);
     })
 };
 
@@ -102,3 +102,4 @@ const addEmployee = () => {
         }
     })
 }
+
