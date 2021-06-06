@@ -57,12 +57,12 @@ const addEmployee = () => {
         },
         {
             type: 'input',
-            message: "What is the manager's employee ID?",
+            message: "What is the employee's ID?",
             name: 'id'
         },
         {
             type: 'input',
-            message: "What is the manager's email address?",
+            message: "What is the employee's email address?",
             name: 'email'
         },
         {
