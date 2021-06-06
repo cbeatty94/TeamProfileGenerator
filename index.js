@@ -29,7 +29,7 @@ const addManager = () => {
            message: "What is the manager's office number?",
            name: 'officeNumber' 
         }
-    ]).then((managerResults) => {
+    ]).then(managerResults => {
         const { name, id, email, officeNumber } = managerResults;
         const manager = new Manager (name, id, email, officeNumber);
         employees.push(manager);
@@ -89,8 +89,10 @@ const addEmployee = () => {
 
         if (role === 'Engineer') {
             employee = new Engineer ( name, id, email, githubUser, addNewEmployee )
+            console.log(employee)
         } else if (role === 'Intern') [
-            employee = new Intern ( name, id, email, school, addNewEmployee )
+            employee = new Intern ( name, id, email, school, addNewEmployee ),
+            console.log(employee)
         ]
 
         employees.push(employee);
