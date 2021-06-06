@@ -16,7 +16,30 @@ const generateManager = function (manager) {
     `
 }
 
-const generateHTML = function (data) {
+generateHTML = (data) => {
+    cardArray = [];
+
+    for (let index = 0; index < data.length; index++) {
+        const employee = data[index];
+        const role = employee.getRole();
+
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            cardArray.push(managerCard);
+        } else if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            cardArray.push(engineerCard);
+        } else if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            cardArray.push(internCard);
+        }
+        
+    }
+}
+const generateTeamProfile = function (data) {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -39,3 +62,5 @@ const generateHTML = function (data) {
     </html>    
     `
 }
+
+module.exports = generateHTML;
