@@ -1,6 +1,10 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateMarkdown = require()
+const generateMarkdown = require('./utils/markdown')
+
+const Manager = require('./lib/manager')
+const Engineer = require('./lib/engineer')
+const Intern = require('./lib/intern')
 
 
 const employees = [];
@@ -103,6 +107,13 @@ const addEmployee = () => {
         } else {
             return employees
         }
+    })
+}
+
+const createPage = data => {
+    fs.writeFile('teampage.html', data, function (err) {
+        if (err) return console.log(err);
+        console.log('Page being generated!')
     })
 }
 

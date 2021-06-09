@@ -74,7 +74,14 @@ generateHTML = (data) => {
         }
         
     }
+    const employeeCards = cardArray.join('')
+    
+    
+    const generate = generateTeamProfile(employeeCards);
+    return generate;
 }
+
+
 const generateTeamProfile = function (data) {
     return `
     <!DOCTYPE html>
