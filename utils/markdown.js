@@ -16,6 +16,42 @@ const generateManager = function (manager) {
     `
 }
 
+const generateEngineer = function (engineer) {
+    return `
+    <div class='col'>
+        <div class='card'>
+            <div class='card-body'>
+                <h5 class='card-title'>Manager</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: ${engineer.name}</li>
+                <li class="list-group-item">Employee ID: ${engineer.id}</li>
+                <li class="list-group-item">Email: <a href = 'mailto: ${engineer.email}'>${engineer.email}</a> </li>
+                <li class="list-group-item">GitHub Account: <a href = 'github.com/${engineer.githubUser}</li>
+            </ul>
+        </div>
+    </div>
+    `
+}
+
+const generateIntern = function (intern) {
+    return `
+    <div class='col'>
+        <div class='card'>
+            <div class='card-body'>
+                <h5 class='card-title'>Manager</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: ${intern.name}</li>
+                <li class="list-group-item">Employee ID: ${intern.id}</li>
+                <li class="list-group-item">Email: <a href = 'mailto: ${intern.email}'>${intern.email}</a> </li>
+                <li class="list-group-item">School: ${intern.school}</li>
+            </ul>
+        </div>
+    </div>
+    `
+}
+
 generateHTML = (data) => {
     cardArray = [];
 
