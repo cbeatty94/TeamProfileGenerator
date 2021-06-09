@@ -14,7 +14,11 @@ describe('Employee', () => {
         const ID = '1233'
         const person = new Employee('Bob', ID)
         expect(person.getId()).toBe(ID)
-
+    })
+    it('Can get email when the getEmail method is called', () => {
+        const email = 'b@gmail.com'
+        const person = new Employee('Bob', '12312', email)
+        expect(person.getEmail()).toBe(email)
     })
 })
 
