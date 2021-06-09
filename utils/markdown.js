@@ -21,13 +21,13 @@ const generateEngineer = function (engineer) {
     <div class='col'>
         <div class='card'>
             <div class='card-body'>
-                <h5 class='card-title'>Manager</h5>
+                <h5 class='card-title'>Engineer</h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Name: ${engineer.name}</li>
                 <li class="list-group-item">Employee ID: ${engineer.id}</li>
                 <li class="list-group-item">Email: <a href = 'mailto: ${engineer.email}'>${engineer.email}</a> </li>
-                <li class="list-group-item">GitHub Account: <a href = 'github.com/${engineer.githubUser}</li>
+                <li class="list-group-item">GitHub Account: <a href = 'https://www.github.com/${engineer.githubUser}'>github.com/${engineer.githubUser}</a> </li>
             </ul>
         </div>
     </div>
@@ -39,7 +39,7 @@ const generateIntern = function (intern) {
     <div class='col'>
         <div class='card'>
             <div class='card-body'>
-                <h5 class='card-title'>Manager</h5>
+                <h5 class='card-title'>Intern</h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Name: ${intern.name}</li>
@@ -82,7 +82,7 @@ generateHTML = (data) => {
 }
 
 
-const generateTeamProfile = function (data) {
+const generateTeamProfile = function (employeeCards) {
     return `
     <!DOCTYPE html>
     <html lang="en">

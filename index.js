@@ -89,7 +89,7 @@ const addEmployee = () => {
         }
     
     ]).then(employeeData => {
-        let { name, id, email, githubUser, school, addNewEmployee } = employeeData;
+        let { name, id, email, role, githubUser, school, addNewEmployee } = employeeData;
         let employee;
 
         if (role === 'Engineer') {
@@ -103,7 +103,7 @@ const addEmployee = () => {
         employees.push(employee);
 
         if (addNewEmployee) {
-            return addNewEmployee(employees)
+            return addEmployee(employees)
         } else {
             return employees
         }
@@ -117,3 +117,14 @@ const createPage = data => {
     })
 }
 
+addManager()
+.then(addEmployee)
+.then(cardArray => {
+    return generateHTML(cardArray);
+})
+.then(pageHTML => {
+    return createPage(pageHTML);
+})
+.catch(err => {
+    console.log(err);
+});
